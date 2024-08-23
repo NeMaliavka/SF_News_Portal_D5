@@ -1,0 +1,8 @@
+sqlite3.OperationalError: table news_post has no column named created_at
+django.db.utils.OperationalError: table news_comment has no column named created_at
+
+БД не могла найти данные поля, пришлось расковыривать таблицу. Там обнаружила, что п какой-то причине данные поля действительно называются не так, как указано в коде.
+Данные моменты корректировала ручками в БД:
+в таблицах post и comment переименовывала таблицы created на created_at
+
+После данных манипуляций все запросы отрабатывали безупречно.
